@@ -1,31 +1,24 @@
 package parsers;
 
-import objects.Supplier;
-import objects.Vehicle;
-
-import java.util.ArrayList;
-import java.util.HashMap;
+import tasks.ITask;
 
 public class VehicleParser
 {
     private final IParser parser;
-    private ArrayList<Vehicle> vehicles = new ArrayList<>();
-    private HashMap<String, Supplier> suppliers = new HashMap<>();
 
-    public VehicleParser()
+    public VehicleParser(IParser parser)
     {
-        parser = new JsonParser();
+        this.parser = parser;
     }
 
     public void parse(String filepath)
     {
-        vehicles.clear();
-        suppliers.clear();
-
         parser.openAndParse(filepath);
-        vehicles = parser.getVehicles();
-        suppliers = parser.getSuppliers();
+    }
 
-        System.out.println();
+    public <T extends ITask> void performTask(T task)
+    {
+        task.loadData(parser.getVehicles());
+        task.start();
     }
 }

@@ -1,22 +1,22 @@
 package parsers;
 
+import objects.Sipp;
 import objects.Supplier;
 import objects.Vehicle;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import res.SippLoader;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class JsonParser implements IParser
 {
     private final JSONParser jsonParser = new JSONParser();
     private final ArrayList<Vehicle> vehicles = new ArrayList<>();
-    private final HashMap<String, Supplier> suppliers = new HashMap<>();
 
     public void openAndParse(String filepath)
     {
@@ -41,35 +41,27 @@ public class JsonParser implements IParser
             JSONObject item = (JSONObject)obj;
 
             Vehicle vehicle = new Vehicle((String)item.get("name"),
-                    (String)item.get("sipp"),
                     ((Number)item.get("price")).doubleValue()
             );
+
+            Sipp sipp = SippLoader.getInstance().findSipp((String)item.get("sipp"));
 
             Supplier supplier = new Supplier((String)item.get("supplier"),
                     ((Number)item.get("rating")).doubleValue()
             );
 
+            vehicle.setSipp(sipp);
             vehicle.setSupplier(supplier);
 
             vehicles.add(vehicle);
-            if(!suppliers.containsKey(supplier.getName()))
-            {
-                suppliers.put(supplier.getName(), supplier);
-            }
         }
 
-        System.out.println("Extracted " + vehicles.size() + " vehicle(s) + " + suppliers.size() + " supplier(s) from .json");
+        System.out.println("Extracted " + vehicles.size() + " vehicle(s) from .json");
     }
 
     @Override
     public ArrayList<Vehicle> getVehicles()
     {
         return vehicles;
-    }
-
-    @Override
-    public HashMap<String, Supplier> getSuppliers()
-    {
-        return suppliers;
     }
 }
