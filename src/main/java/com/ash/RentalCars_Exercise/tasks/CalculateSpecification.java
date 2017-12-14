@@ -6,6 +6,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class CalculateSpecification extends baseTask
 {
+    /**
+     * Shows vehicle specifications
+     */
     @Override
     public void start()
     {

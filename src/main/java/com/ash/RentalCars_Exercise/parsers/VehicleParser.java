@@ -12,6 +12,11 @@ public class VehicleParser
         parser.openAndParse(filepath);
     }
 
+    /**
+     * Loads and executes a given ITask
+     * @param task
+     * @param <T>
+     */
     public <T extends ITask> void performTask(T task)
     {
         task.loadData(parser.getVehicles());

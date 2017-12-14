@@ -2,13 +2,15 @@ package com.ash.RentalCars_Exercise.tasks;
 
 import com.ash.RentalCars_Exercise.objects.Vehicle;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
 
 @Component
 public class AscendingPrice extends baseTask
 {
+    /**
+     * Sorts vehicles by price ascending
+     */
     @Override
     public void start()
     {

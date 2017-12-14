@@ -20,9 +20,9 @@
 
             function doTask()
             {
-                var url = "/tasks/get/" + vm.taskToGet;
+                var url = "/tasks/" + vm.taskToGet;
 
-                $http.post(url).then(function(response)
+                $http.get(url).then(function(response)
                 {
                     vm.tasks = response.data;
                 });

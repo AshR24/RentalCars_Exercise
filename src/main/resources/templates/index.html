@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Rentalcars.com Technical Assessment</title>
-    <link rel="stylesheet" href="../static/bootstrap.css" th:href="@{/bootstrap.css}" />
-    <link rel="stylesheet" href="../static/my.css" th:href="@{/my.css}" />
+    <link rel="stylesheet" href="../static/default.css" th:href="@{/default.css}" />
     <script type="text/javascript" src="/static/angular.min.js" th:src="@{/angular.min.js}"></script>
 
     <script type="text/javascript" src="/static/app/app.module.js" th:src="@{/app/app.module.js}"></script>
@@ -18,7 +17,6 @@
         <label class="item"><input type="radio" name="rb3" ng-click="vm.doTask()" ng-model="vm.taskToGet" value="highestRatedSupplierByCarType"/>Highest Rated Supplier By Car Types</label>
         <label class="item"><input type="radio" name="rb4" ng-click="vm.doTask()" ng-model="vm.taskToGet" value="vehicleScores"/>Vehicle Scores</label>
     </form>
-
 
     <ul>
         <li ng-repeat="item in vm.tasks track by $index">{{ item }} </li>

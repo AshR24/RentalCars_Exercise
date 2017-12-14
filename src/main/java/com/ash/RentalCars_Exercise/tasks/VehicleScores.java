@@ -10,6 +10,9 @@ import java.util.Map;
 @Component
 public class VehicleScores extends baseTask
 {
+    /**
+     * Sorts vehicles by their "VehicleScore" + "Supplier rating" - descending order
+     */
     @Override
     public void start()
     {
@@ -19,6 +22,7 @@ public class VehicleScores extends baseTask
         vehicles.forEach(vehicle -> calcVehicleScore(vehicle, vehicleScores, summedScores));
         ArrayList<Map.Entry<Vehicle, Double>> sortedList = new ArrayList<>(summedScores.entrySet());
 
+        // Sorts the scores in descending order
         sortedList.sort((o1, o2) -> o2.getValue().compareTo(o1.getValue()));
 
         sortedList.forEach(vehicleDoubleEntry ->
@@ -34,6 +38,12 @@ public class VehicleScores extends baseTask
         });
     }
 
+    /**
+     * Score a vehicle based on certain characteristics
+     * @param vehicle
+     * @param vehicleScores
+     * @param summedScores
+     */
     private void calcVehicleScore(Vehicle vehicle, HashMap<Vehicle, Double> vehicleScores, HashMap<Vehicle, Double> summedScores)
     {
         double score = vehicle.getSipp().isManualTransmission() ? 1 : 5;

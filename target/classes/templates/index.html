@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Rentalcars.com Technical Assessment</title>
+    <link rel="stylesheet" href="../static/default.css" th:href="@{/default.css}" />
+    <script type="text/javascript" src="/static/angular.min.js" th:src="@{/angular.min.js}"></script>
+
+    <script type="text/javascript" src="/static/app/app.module.js" th:src="@{/app/app.module.js}"></script>
+    <script type="text/javascript" src="/static/app/task.controller.js" th:src="@{/app/task.controller.js}"></script>
+</head>
+<body ng-app="app" ng-controller="TaskController as vm">
+    <form>
+        <label class="item"><input type="radio" name="rb1" ng-click="vm.doTask()" ng-model="vm.taskToGet" value="ascendingPrice"/>Ascending Price</label>
+        <label class="item"><input type="radio" name="rb2" ng-click="vm.doTask()" ng-model="vm.taskToGet" value="calculateSpecification"/>Calculate Specification</label>
+        <label class="item"><input type="radio" name="rb3" ng-click="vm.doTask()" ng-model="vm.taskToGet" value="highestRatedSupplierByCarType"/>Highest Rated Supplier By Car Types</label>
+        <label class="item"><input type="radio" name="rb4" ng-click="vm.doTask()" ng-model="vm.taskToGet" value="vehicleScores"/>Vehicle Scores</label>
+    </form>
+
+    <ul>
+        <li ng-repeat="item in vm.tasks track by $index">{{ item }} </li>
+    </ul>
+</body>
+</html>

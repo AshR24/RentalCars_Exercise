@@ -8,11 +8,11 @@ public class Driver
 {
     public static void main(String[] args)
     {
-        VehicleParser vParser = new VehicleParser(new JsonParser(), "src/main/resources/static/vehicles.json");
+        VehicleParser vParser = new VehicleParser(new JsonParser(), "static/vehicles.json");
 
         ITask task = new AscendingPrice();
         vParser.performTask(task);
-        System.out.println(task.getJson());
+        System.out.println(task.getReadableResults());
 
         task = new CalculateSpecification();
         vParser.performTask(task);
@@ -24,6 +24,6 @@ public class Driver
 
         task = new VehicleScores();
         vParser.performTask(task);
-        System.out.println(task.getReadableResults());
+        System.out.println(task.getJson());
     }
 }

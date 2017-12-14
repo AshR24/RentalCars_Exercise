@@ -11,6 +11,9 @@ import java.util.Comparator;
 @Component
 public class HighestRatedSupplierByCarType extends baseTask
 {
+    /**
+     * Sorts vehicles by highest supplier per car type
+     */
     @Override
     public void start()
     {
@@ -23,6 +26,7 @@ public class HighestRatedSupplierByCarType extends baseTask
         ArrayList<String> typesAlreadyFound = new ArrayList<>();
         ArrayList<Vehicle> sortedList = new ArrayList<>();
 
+        // Gets the first instance of each car type
         vehicles.forEach(vehicle ->
         {
             Sipp sipp = vehicle.getSipp();

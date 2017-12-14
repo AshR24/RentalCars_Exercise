@@ -1,0 +1,94 @@
+[
+    [
+        {
+            "key": "M",
+            "name": "Mini"
+        },
+        {
+            "key": "E",
+            "name": "Economy"
+        },
+        {
+            "key": "C",
+            "name": "Compact"
+        },
+        {
+            "key": "I",
+            "name": "Intermediate"
+        },
+        {
+            "key": "S",
+            "name": "Standard"
+        },
+        {
+            "key": "F",
+            "name": "Full size"
+        },
+        {
+            "key": "P",
+            "name": "Premium"
+        },
+        {
+            "key": "L",
+            "name": "Luxury"
+        },
+        {
+            "key": "X",
+            "name": "Special"
+        }
+    ],
+    [
+        {
+            "key": "B",
+            "name": "2 doors"
+        },
+        {
+            "key": "C",
+            "name": "4 doors"
+        },
+        {
+            "key": "D",
+            "name": "5 doors"
+        },
+        {
+            "key": "W",
+            "name": "Estate"
+        },
+        {
+            "key": "T",
+            "name": "Convertible"
+        },
+        {
+            "key": "F",
+            "name": "SUV"
+        },
+        {
+            "key": "P",
+            "name": "Pick up"
+        },
+        {
+            "key": "V",
+            "name": "Passenger Van"
+        }
+    ],
+    [
+        {
+            "key": "M",
+            "name": "Manual"
+        },
+        {
+            "key": "A",
+            "name": "Automatic"
+        }
+    ],
+    [
+        {
+            "key": "N",
+            "name": "Petrol/no AC"
+        },
+        {
+            "key": "R",
+            "name": "Petrol/AC"
+        }
+    ]
+]
