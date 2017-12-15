@@ -1,6 +1,4 @@
 # RentalCars_Exercise
-An application that performs operations on a given .json file
-
 
 ## Instructions
 ### REST - Web Browser
